@@ -1,0 +1,48 @@
+name: Publicar versión pública en GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "planificador-ti/app/**"
+      - "dashboard/informe-ejemplo-power-bi.pdf"
+      - ".github/workflows/publicar-pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publicar-pages
+  cancel-in-progress: true
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar main
+        uses: actions/checkout@v4
+
+      - name: Armar el contenido público
+        run: |
+          mkdir -p _site
+          cp -r planificador-ti/app/. _site/
+          cp dashboard/informe-ejemplo-power-bi.pdf _site/
+          touch _site/.nojekyll
+
+      - name: Actualizar la rama gh-pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin gh-pages
+          git checkout gh-pages
+          find . -mindepth 1 -maxdepth 1 ! -name .git ! -name _site -exec rm -rf {} +
+          cp -r _site/. .
+          rm -rf _site
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Sin cambios para publicar"
+          else
+            git commit -m "Publicación automática desde main (${GITHUB_SHA::7})"
+            git push origin gh-pages
+          fi

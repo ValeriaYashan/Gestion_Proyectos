@@ -30,6 +30,10 @@ Funciones principales de ambas versiones:
 
 Las dos versiones tienen exactamente la misma funcionalidad. Solo la de alumnos incluye los casos de EGCI, las reservas con valor monetario esperado y el control de cambios.
 
+### Publicación en GitHub Pages
+
+La rama `gh-pages` contiene solo la versión pública (`planificador-ti/app/`) y el PDF del informe; la versión de alumnos no se publica. Se actualiza sola con cada cambio en `main` mediante `.github/workflows/publicar-pages.yml`. Para activarla, en Settings, Pages, elegir «Deploy from a branch», rama `gh-pages`, carpeta raíz. Dirección: https://valeriayashan.github.io/Gestion_Proyectos/
+
 ### Uso local
 
 Servir la carpeta `planificador-ti/` con cualquier servidor de archivos y abrir el `index.html` de la versión que se quiera:
