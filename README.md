@@ -41,7 +41,7 @@ python3 -m http.server 8000
 # http://localhost:8000/alumnos-d0f4dda780e1/index.html
 ```
 
-La importación de Excel usa SheetJS desde un CDN, por lo que requiere conexión a internet.
+La importación de Excel usa SheetJS desde un CDN y las tipografías vienen de Google Fonts, por lo que se necesita conexión a internet. Los botones de contacto y capacitaciones apuntan a valeriayashan.com.ar, así que la herramienta funciona igual aunque se abra desde otra dirección o desde una copia local.
 
 ## Dashboard de Power BI
 

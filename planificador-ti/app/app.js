@@ -9,10 +9,10 @@
     SCHEMA_VERSION: 4,        // 4: tareas inactivas, cortes de EVM, registro de tiempo, trazabilidad y reglas de alerta; 3: dependencias tipadas, tres puntos, problemas y acciones, riesgos con valor monetario y solicitudes de cambio
     STORAGE_KEY_VERSION: 2,   // la clave de guardado local sigue en v2 para no perder el progreso ya guardado en los navegadores
     SITE_URL: "https://valeriayashan.com.ar",
-    PRESENTATION_URL: "/herramientas/planificador-ti/",
-    LEAD_ENABLED: false, SUBSCRIBE_URL: "/herramientas/planificador-ti/suscribirse/",
-    CONTACT_URL: "/contacto",
-    TRAINING_URL: "/capacitaciones",
+    PRESENTATION_URL: "https://valeriayashan.com.ar/herramientas/planificador-ti/",
+    LEAD_ENABLED: false, SUBSCRIBE_URL: "https://valeriayashan.com.ar/herramientas/planificador-ti/suscribirse/",
+    CONTACT_URL: "https://valeriayashan.com.ar/contacto",
+    TRAINING_URL: "https://valeriayashan.com.ar/capacitaciones",
     WHATSAPP_URL: "", // FALTA: enlace de WhatsApp del sitio (ej. https://wa.me/54911XXXXXXXX?text=...). Vacío = el botón no se muestra.
     ATTRIBUTION: "Herramienta de Valeria Yashan · valeriayashan.com.ar",
     LEAD_TITLE: "¿Te sirvió el planificador?",
